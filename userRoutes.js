@@ -1,7 +1,7 @@
 const { User } = require("./User");
 
 module.exports = app => {
-  app.post(`/api/submit`, (req, res) => {
+  app.post(`/`, (req, res) => {
     const user = new User(req.body);
 
     user.save((err, doc) => {
@@ -19,4 +19,9 @@ module.exports = app => {
       res.status(200).json(doc);
     });
   });
+
+  // app.use("/", (req, res) => {
+  //   if (err) return re.status(400).send(err);
+  //   res.sendFile(__dirname + "App.js");
+  // });
 };

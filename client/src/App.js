@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import TextBoxes from './components/Text-Boxes'
+import AddInfo from './components/AddInfo'
 
 
 class App extends Component {
   render() {
     return (
       <div>
-        <TextBoxes/>
+        <AddInfo/>
       </div>
     );
   }
