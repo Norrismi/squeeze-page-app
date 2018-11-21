@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from 'axios'
+import axios from "axios";
 
 class TextBoxes extends Component {
   state = {
@@ -14,33 +14,31 @@ class TextBoxes extends Component {
   handleInput = (event, name) => {
     const newFormData = {
       ...this.state.formData
-    }
+    };
     newFormData[name] = event.target.value;
 
     this.setState({
-      formdata: newFormData
-    })
-  }
-
-
-
-  submitForm = event => {
-    event.prevent.default();
-
-    const data = this.state.formData
-
-    axios.post('/', data).then(res => {
-      console.log(res)
-      this.setState({
-        info: data
-
-      })
-    })
+      formData: newFormData
+    });
   };
 
+  submitForm = event => {
+    event.preventDefault();
+
+    const data = this.state;
+
+    axios.post("http://localhost:3000/", data).then(res => {
+      
+      console.log(res);
+      console.log(res.data);
+      this.setState(
+         res
+      );
+    });
+  };
 
   render() {
-    console.log(this.state)
+    console.log(this.state);
     return (
       <div className="container">
         <form onSubmit={this.submitForm}>
@@ -79,11 +77,11 @@ class TextBoxes extends Component {
               <div className="row" />
               <div className="input-field col s6" />
               <i className=""> </i>
-              <input 
-              id="email" 
-              type="email" 
-              value={this.state.email}
-              onChange = {event => this.handleInput(event, 'email')}
+              <input
+                id="email"
+                type="email"
+                value={this.state.email}
+                onChange={event => this.handleInput(event, "email")}
               />
               <label>Email</label>
             </div>
@@ -93,21 +91,18 @@ class TextBoxes extends Component {
               <div className="row" />
               <div className="input-field col s6" />
               <i className="" />
-              <input 
-              id="icon_telephone" 
-              type="tel" 
-              value={this.state.phone}
-              onChange={event => this.handleInput(event,'phone')}
+              <input
+                id="icon_telephone"
+                type="tel"
+                value={this.state.phone}
+                onChange={event => this.handleInput(event, "phone")}
               />
-              
+
               <label>Phone Number</label>
             </div>
           </div>
 
-          <button 
-          className= 'form btn'
-          type='submit'
-          >
+          <button className="form btn" type="submit">
             Submit
           </button>
         </form>
