@@ -1,7 +1,7 @@
 const { User } = require("./User");
 
 module.exports = app => {
-  app.post(`/api/`, (req, res) => {
+  app.post(`/api/add`, (req, res) => {
     const user = new User(req.body);
 
     user.save((err, doc) => {

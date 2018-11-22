@@ -27,14 +27,14 @@ class TextBoxes extends Component {
 
     const data = this.state;
 
-    axios.post("http://localhost:3000/", data).then(res => {
-      
+    axios.post("/api/add", data)
+    .then(res => 
+  
+      { 
       console.log(res);
-      console.log(res.data);
-      this.setState(
-         res
-      );
-    });
+      console.log(res.data)
+    }
+    );
   };
 
   render() {
