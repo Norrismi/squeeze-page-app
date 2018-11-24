@@ -1,7 +1,11 @@
 const { User } = require("./User");
+var cors = require('cors')
 
 module.exports = app => {
-  app.post(`/api/add`, (req, res) => {
+  
+  app.use(cors())
+
+  app.post(`/`, (req, res) => {
     const user = new User(req.body);
 
     user.save((err, doc) => {

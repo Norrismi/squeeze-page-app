@@ -27,7 +27,7 @@ class TextBoxes extends Component {
 
     const data = this.state;
 
-    axios.post("/api/add", data)
+    axios.post("http://localhost:5000", data)
     .then(res => 
   
       { 
