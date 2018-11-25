@@ -27,14 +27,9 @@ class TextBoxes extends Component {
 
     const data = this.state.formData;
 
-    axios.post("/", data)
-    .then(res => 
-  
-      { 
-      console.log(res);
-      console.log(res.data)
-    }
-    );
+    axios.post("/", data).then(res => {
+      this.props.history.push("/thanks");
+    });
   };
 
   render() {
