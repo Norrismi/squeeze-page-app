@@ -25,7 +25,7 @@ class TextBoxes extends Component {
   submitForm = event => {
     event.preventDefault();
 
-    const data = this.state;
+    const data = this.state.formData;
 
     axios.post("/", data)
     .then(res => 
@@ -38,7 +38,7 @@ class TextBoxes extends Component {
   };
 
   render() {
-    console.log(this.state);
+    console.log(this.state.formData);
     return (
       <div className="container">
         <form onSubmit={this.submitForm}>

@@ -11,7 +11,9 @@ mongoose.Promise = global.Promise
 mongoose.connect(
   keys.mongoURI,
   { useNewUrlParser: true }
-);
+)
+.then(() => console.log("MongoDB successfully connected"))
+.catch(err => console.log(err));
 
 app.use(bodyParser.json())
 app.use(cors())

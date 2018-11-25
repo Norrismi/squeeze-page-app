@@ -9,7 +9,7 @@ module.exports = app => {
     const user = new User(req.body);
 
     user.save((err, doc) => {
-      if (err) return res.status(400).send(err);
+      if (err) return res.send('error')
       res.status(200).json({
         post: true,
         userId: doc._id
