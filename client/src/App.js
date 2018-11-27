@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import AddInfo from './components/AddInfo'
+import AddInfo from './container/AddInfo'
 
 
 
