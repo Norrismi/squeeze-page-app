@@ -24,8 +24,5 @@ module.exports = app => {
     });
   });
 
-  // app.use("/", (req, res) => {
-  //   if (err) return re.status(400).send(err);
-  //   res.sendFile(__dirname + "App.js");
-  // });
+
 };

@@ -3,13 +3,6 @@ import axios from "axios";
 
 let emailRegex = RegExp(/[^@]+@[^.]+\..+/);
 
-// const formValid = formErrors => {
-//   let valid = true;
-
-//   Object.values(formErrors).forEach(val => val && (valid = false));
-//   return valid;
-// };
-
 class TextBoxes extends Component {
   constructor(props) {
     super(props);
@@ -42,24 +35,11 @@ class TextBoxes extends Component {
           this.props.history.push("/thanks");
         })
       : data.formErrors.form.push("Complete the form");
-
-    // if (formValid(this.state.formErrors)) {
-    //   let data = this.state;
-
-    //   console.log(`
-    //   FirstName: ${data.firstName}
-    //   Last Name: ${data.lastName}
-    //   Email: ${data.email}
-    //   Phone: ${data.phone}
-    //   `);
-    // } else {
-    //   console.error("Form Invalid - Display error message");
-    // }
   };
 
   handleChange = event => {
     event.preventDefault();
-    const { name, value } = event.target; //name in JSX, value = what's typed in
+    const { name, value } = event.target; 
     let formErrors = this.state.formErrors;
 
     switch (name) {
